@@ -4,6 +4,8 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello World!");
+        DateTime thisDay = DateTime.Now;
+        Console.WriteLine(thisDay.ToShortDateString());
+        
     }
 }
