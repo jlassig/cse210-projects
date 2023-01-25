@@ -2,63 +2,56 @@ class Entry
 {
 
  //**********************************
- // https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1?view=net-7.0
-public string Prompt{ get; set;}
-public string Date{get; set;}
-public string NewEntry{get; set;}
-
- 
- public override string ToString()
- {
-  return ($"{Date}, {Prompt}, {NewEntry}");
- }
-
- 
- // public string DisplayEntry()
- // {
- //  return ($"{Date}, {Prompt}, {NewEntry}");
- // }
+ //  https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1?view=net-7.0
+ public string _prompt{ get; set;}
+ public string _date{get; set;}
+ public string _newEntry{get; set;}
 
 
- // public string prompt;
- // public string date;
- // public string entry;
+  public override string ToString()
+  {
+   return ($"{_date}| {_prompt}| {_newEntry}");
+  }
 
 
+ // public List<Entry> _entries = new List<Entry>();
 
+
+ // public string _prompt;
+ // public string _date;
+ // public string _entry;
 
  //  public Entry(string randomPrompt)
  // {
- //   prompt = randomPrompt;
- //   entry = getEntry();
- //   date = GetDate();
+ //   _prompt = randomPrompt;
+ //   _entry = getEntry();
+ //   _date = GetDate();
  // }
 
- //  public string GetDate()
- //  {
- //   DateTime thisDay = DateTime.Now;
- //   return (thisDay.ToShortDateString());
- //   //returns the date like "1/16/2023"
+//   public string GetDate()
+//   {
+//    DateTime thisDay = DateTime.Now;
+//   // return (thisDay.ToShortDateString());
+//    _date = thisDay.ToShortDateString(); 
+//    return _date;
+//    //returns the date like "1/16/2023"
 
- //  }
+//   }
 
- //  public string getEntry()
- //  {
- //   entry = Console.ReadLine();
- //   return entry; 
- //  }
-
-
- // public string DisplayEntry()
- // {
- //  string fullEntry = ($"{date}, {prompt}, {entry}");
- //  return fullEntry;
- // }
+//   public string getEntry()
+//   {
+//    _entry = Console.ReadLine();
+//    return _entry; 
+//   }
 
 
+//  public void DisplayEntry()
+//  {
+//   // string fullEntry = ($"{_date}, {_prompt}, {_entry}");
+//   // return fullEntry;
+//   Console.WriteLine($"{_date}, {_prompt}, {_entry}");
 
-
-
+// }
 
 }
 
