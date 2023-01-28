@@ -9,6 +9,8 @@ class Program
 {
     static void Main(string[] args)
     {
+
+
        Console.WriteLine("\nWelcome to the Journal Program: ") ;
        string _menuChoice = "9";
        Journal journal = new Journal();

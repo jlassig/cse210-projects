@@ -1,7 +1,7 @@
 using System;
 class JournalDate{
- public string _theDate;
- public int _theDay;
+ private string _theDate;
+ private int _theDay;
 
 
  public JournalDate(){

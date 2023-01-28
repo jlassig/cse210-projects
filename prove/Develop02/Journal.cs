@@ -4,17 +4,17 @@ public class Journal
   
 
 
-  List<Entry> _entries = new List<Entry>();
+  private List<Entry> _entries = new List<Entry>();
 //  List<Entry> _entries = new List<Entry>();
   // public string fileName = "entries.txt";
-  public string _fileName;
-  public string _errorMessage = "That file was not found. Check the spelling.";
+  private string _fileName;
+  private string _errorMessage = "That file was not found. Check the spelling.";
 
   public void AddEntry()
   { // this just appends to a list. if the user doesn't "save" it, it will be lost forever. 
     //first get the date: 
     JournalDate newDate = new JournalDate();
-    string journalDate = newDate._theDate;
+    string journalDate = newDate.GetDate();
 
     //next define a new instance of PromptGenerator
     PromptGenerator journalPrompt = new PromptGenerator();
@@ -48,7 +48,7 @@ public class Journal
     //NOTE to self: if you put "true" as a second argument, it doesn't overwrite what was previously written 
     //"using" is like "with" in Python in that it opens and subsequently closes the file when I am done. 
     //StreamWriter: "StreamWriter object is used to define a stream. The stream is then used to write data from the application to the file." --guru99.com 
-    using (StreamWriter outputFile = new StreamWriter(_fileName, true))
+    using (StreamWriter outputFile = new StreamWriter(_fileName))
     {
     //going through the list of entries in the List:
     foreach (Entry i in _entries)
@@ -119,7 +119,7 @@ public class Journal
 
     //first get the date: 
     JournalDate newDate = new JournalDate();
-    string journalDate = newDate._theDate;
+    string journalDate = newDate.GetDate();
     //first define a new instance of PromptGenerator
     PromptGenerator _bonusJournalPrompt = new PromptGenerator();
     //pull out the prompt and assign it to a string variable
@@ -130,6 +130,8 @@ public class Journal
     string _userEntry = Console.ReadLine();
     ////adding to the entries List the info for the recent entry
     _entries.Add(new Entry() { _date = journalDate, _prompt = _bonusRandomPrompt, _newEntry = _userEntry });
+ 
+
 
   // //   // //iterating through the list to see if the full list prints. 
   // //   foreach (Entry entry in _entries)
