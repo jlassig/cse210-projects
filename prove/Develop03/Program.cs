@@ -20,6 +20,7 @@ class Program
   int verse = Int32.Parse(verseString);
   Console.Write("Do you want to enter another verse? Y or N: ");
   string answer = Console.ReadLine();
+ 
 
   if (answer.ToUpper() == "Y")
   {
@@ -29,6 +30,8 @@ class Program
    Reference reference = new Reference(book, chapter, verse, verse2);
    referenceString = reference.DisplayReference();
    scriptureText = reference.GetScriptureString();
+
+   
   }
   else
   {
@@ -65,8 +68,6 @@ class Program
   while (_input.ToLower() != "quit");
 
   // 
-
-
   //  https://scriptures.nephi.org/  <--for adding to the bonus. I want the user to be able to choose any scripture! that would be cool!
 
 
