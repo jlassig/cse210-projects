@@ -2,8 +2,8 @@ using System;
 public class Fraction
 {
 
-private int _top;
-private int _bottom;
+ private int _top;
+ private int _bottom;
 
  public Fraction()
  {
@@ -25,38 +25,38 @@ private int _bottom;
 
 
 
-// public int GetTop()
-// {
+ public int GetTop()
+ {
 
-//   return: _top;
+  return _top;
 
-// }
-// public void SetTop(int top)
-// {
-//  _top = top;
+ }
+ public void SetTop(int top)
+ {
+  _top = top;
 
-// }
-// public int GetBottom()
-// {
-//  return: _bottom;
-// }
+ }
+ public int GetBottom()
+ {
+  return _bottom;
+ }
 
-// public void SetBottom(int bottom)
-// {
-//   _bottom: = bottom;
-// }
+ public void SetBottom(int bottom)
+ {
+  _bottom = bottom;
+ }
 
 
-public string GetFractionString()
-{
+ public string GetFractionString()
+ {
   string fraction = $"{_top}/{_bottom}";
   return fraction;
-}
-public double GetDecimalValue()
-{
- double decimalNumber = (double)_top / (double)_bottom;
- return decimalNumber;
-}
+ }
+ public double GetDecimalValue()
+ {
+  double decimalNumber = (double)_top / (double)_bottom;
+  return decimalNumber;
+ }
 
 
 }
