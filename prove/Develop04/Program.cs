@@ -1,5 +1,7 @@
-//added fun animation on the Breathing Activity
-//added another kind of Activity: Remote Viewing! well... Remote Viewing for a number. Pictures would've been cooler, but numbers were easier for me to figure out this time.
+//I added:
+// 1. fun animation on the Breathing Activity
+// 2. another kind of Activity: Remote Viewing! well... Remote Viewing for a number. Pictures would've been cooler, but numbers were easier for me to figure out this time.
+// 2. In the list activity, if the user hit enter, without adding anything, that doesn't get counted as an "item". 
 
 using System;
 //so that I don't have to use Console.WriteLine, I can just do WriteLine!
