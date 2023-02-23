@@ -1,4 +1,4 @@
-//so that I don't have to use Console.WriteLine, I can just do WriteLine!
+
 using static System.Console;
 class Activity
 {
@@ -21,6 +21,7 @@ class Activity
   _seconds = seconds;
  }
 
+//getting and setting a Name property
  public string Name
  {
   get { return _name; }
@@ -112,20 +113,49 @@ class Activity
   CursorVisible = false;
   for (int i = timerLength; i > 0; i--)
   {
-   if (i > 9)
+   Write(i);
+   Thread.Sleep(1000);
+   if(i>99)
    {
-    Write(i);
-    Thread.Sleep(1000);
-    Write("\b\b");
+    Write("\b\b\b   \b\b\b");
+   }
+   else if (i > 9)
+   {
+    Write("\b\b  \b\b");
    }
    else
    {
-    Write($"{i} ");
-    Thread.Sleep(1000);
-    Write("\b\b");
+    Write("\b \b");
    }
   }
   Write("0");
   CursorVisible = true;
  }
+
+ public void EatDotsTimer(int duration)
+ {
+  //I like having the cursor visible because it reminds me of Pac Man eating the dots!
+  string dots = new string('.', duration);
+  Write(dots);
+  for (int i=duration; i>0; i--)
+  {
+   Thread.Sleep(1000);
+   Write("\b \b");
+  }
+
+ }
+
+ // public void DotTimer(int duration)
+ // {
+ //  CursorVisible = false;
+ //  for (int i=duration; i>0; i--)
+ //  {
+ //   Write(".");
+ //   Thread.Sleep(1000);
+ //  }
+ //  CursorVisible = true;
+
+ // }
+
+
 }

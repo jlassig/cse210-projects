@@ -2,6 +2,8 @@
 //added another kind of Activity: Remote Viewing! well... Remote Viewing for a number. Pictures would've been cooler, but numbers were easier for me to figure out this time.
 
 using System;
+//so that I don't have to use Console.WriteLine, I can just do WriteLine!
+//my new best friend:
 using static System.Console;
 
 class Program
@@ -81,7 +83,7 @@ class Program
 
  static string GetMenuChoice()
  {
-  string prettyLines = ("----------------------------------");
+  string prettyLines = new string('-', 34);
   WriteLine("\n" + prettyLines);
   WriteLine("          Menu Options:");
   WriteLine(prettyLines);

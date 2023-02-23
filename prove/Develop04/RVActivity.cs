@@ -3,9 +3,9 @@ using static System.Console;
 class RVActivity : Activity
 {
 
- private int maxNumber;
- private int answer;
- private int luckyNumber;
+ private int _maxNumber;
+ private int _answer;
+ private int _luckyNumber;
  public RVActivity()
  {
 
@@ -18,26 +18,7 @@ class RVActivity : Activity
  {
  }
 
- // public int GetRange()
- // {
- //  Write("Choose any number greater than 9: ");
- //  bool isNumber = false;
- //  while (isNumber == false)
- //  {
- //   // get the input:
- //   string numInput = ReadLine();
- //   //check it is an integer and turn it into an integer:
- //   if (int.TryParse(numInput, out maxNumber))
- //   {
- //    isNumber = true;
- //   }
- //   else
- //   {
- //    WriteLine("Not a valid number, please try again.");
- //   }
- //  }
- //  return maxNumber;
- // }
+
  public int GetRange()
  {
   Write("Choose any number greater than 9: ");
@@ -48,9 +29,9 @@ class RVActivity : Activity
    // get the input:
    string numInput = ReadLine();
    //check it is an integer and turn it into an integer:
-   if (int.TryParse(numInput, out maxNumber))
+   if (int.TryParse(numInput, out _maxNumber))
    {
-    if (maxNumber > 9)
+    if (_maxNumber > 9)
     {
      bigNumber = true;
      isNumber = true;
@@ -65,7 +46,7 @@ class RVActivity : Activity
     WriteLine("Not a valid number, please try again.");
    }
   }
-  return maxNumber;
+  return _maxNumber;
  }
 
 
@@ -73,25 +54,25 @@ class RVActivity : Activity
  {
   GetRange();
   Random random = new Random();
-  int randomNum = random.Next(0, maxNumber);
+  int randomNum = random.Next(0, _maxNumber);
   return randomNum;
  }
 
  public void RVFurtherInstructions()
  {
-  luckyNumber = GetNumber();
+  _luckyNumber = GetNumber();
   Clear();
-  WriteLine($"The computer is going to pull a random number from a range of 0 and {maxNumber}\n");
+  WriteLine($"The computer is going to pull a random number from a range of 0 and {_maxNumber}\n");
   WriteLine("When the timer begins, breathe in and out and try to picture \nthat random number in your mind for the duration of the timer.\n");
-  Thread.Sleep(8000);
+  EatDotsTimer(7);
  }
 
  public void RemoteView()
  {
-  Write("Timer: ");
+  Write("\nTimer: ");
   CountdownTimer(Seconds);
   int answerNumber = GetAnswer();
-  CheckIfWin(luckyNumber, answerNumber);
+  CheckIfWin(_luckyNumber, answerNumber);
  }
 
  public int GetAnswer()
@@ -103,7 +84,7 @@ class RVActivity : Activity
    // get the input:
    string answerString = ReadLine();
    //check it is an integer and turn it into an integer:
-   if (int.TryParse(answerString, out answer))
+   if (int.TryParse(answerString, out _answer))
    {
     isNumber = true;
    }
@@ -112,7 +93,7 @@ class RVActivity : Activity
     WriteLine("Not a valid number, please try again.");
    }
   }
-  return answer;
+  return _answer;
  }
  public void CheckIfWin(int luckyNum, int answerNum)
  {

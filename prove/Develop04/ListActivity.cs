@@ -6,9 +6,6 @@ class ListActivity : Activity
  private List<string> promptList = new List<string>
  {"Who are people that you appreciate?", "What are personal strengths of yours?", "Who are people that you have helped this week?", "When have you felt the Holy Ghost this month?", "Who are some of your personal heroes?"
  };
-
- private string _prompt;
-
  private int _responseCounter = 0;
 
  public ListActivity()
@@ -20,20 +17,15 @@ class ListActivity : Activity
  }
  public ListActivity(string name, int seconds) : base(name, seconds)
  {
-  _prompt = GetPrompt();
+
  }
 
- public string Prompt
- {
-  get { return _prompt; }
-  set { _prompt = value; }
- }
 
  public void ListIt()
  {
   WriteLine("List as many responses as you can to the following prompt:\n");
-
-  WriteLine($"--{Prompt}--");
+  string prompt = GetPrompt();
+  WriteLine($"--{prompt}--");
   Write("         You may begin in: ");
   CountdownTimer(5);
   WriteLine("");
