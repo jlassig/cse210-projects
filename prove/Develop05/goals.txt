@@ -1,0 +1,4 @@
+200
+Simple Goal|homework|Get my C# homework done today|50|False
+Eternal Goal|scriptures|read scriptures daily|20
+Checklist Goal|exercise|exercise 3 times this week|30|500|3|2
